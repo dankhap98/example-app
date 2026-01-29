@@ -1,3 +1,9 @@
+// Source - https://stackoverflow.com/a
+// Posted by virtual-adam, modified by community. See post 'Timeline' for change history
+// Retrieved 2026-01-29, License - CC BY-SA 4.0
+
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -33,9 +39,13 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    kotlinOptions {
-        jvmTarget = "11"
+
+    kotlin {
+        compilerOptions {
+            jvmTarget = JvmTarget.JVM_11
+        }
     }
+
     buildFeatures {
         compose = true
     }
